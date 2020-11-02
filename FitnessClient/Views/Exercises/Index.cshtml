@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using FitnessClient.Models;
+
+<h1>New Exercise:</h1>
+
+<form action="/exercises" method="post">
+  <label for="name">Exercise Name</label>
+  <input id="name" name="name" type="text">
+  <label for="difficulty">Difficulty</label>
+  <input id="difficulty" name="difficulty" type="text">
+  <label for="type">Type</label>
+  <input id="type" name="type" type="text">
+  <label for="target">Target</label>
+  <input id="target" name="target" type="text">
+  <label for="calories">Calories</label>
+  <input id="calories" name="calories" type="number">
+  <button type="submit">Add Exercise!</button>
+</form>
+
+<h1>All Exercises:</h1>
+
+<ol>
+@foreach (Exercise exercise in Model)
+{
+    <ul>
+        <li>ID: @exercise.ExerciseId</li>
+        <li>Name: @exercise.Name</li>
+        <li>Difficulty: @exercise.Difficulty</li>
+        <li>Type: @exercise.Type</li>
+        <li>Target: @exercise.Target</li>
+        <li>Calories: @exercise.Calories</li>
+    </ul>
+    <a href="/Exercises/Details/@(exercise.ExerciseId)"><p>View Details</p></a>
+    <br>
+}
+</ol>
