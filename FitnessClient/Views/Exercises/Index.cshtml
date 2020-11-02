@@ -1,11 +1,10 @@
 @{
-    ViewData["Title"] = "Home Page";
+  Layout = "_Layout";
 }
 
 @using FitnessClient.Models;
 
 <h1>New Exercise:</h1>
-
 <form action="/exercises" method="post">
   <label for="name">Exercise Name</label>
   <input id="name" name="name" type="text">

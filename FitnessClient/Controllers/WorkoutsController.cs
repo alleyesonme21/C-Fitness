@@ -8,30 +8,30 @@ using FitnessClient.Models;
 
 namespace FitnessClient.Controllers
 {
-  public class ExercisesController : Controller
+  public class WorkoutsController : Controller
   {
     public IActionResult Index()
     {
-      var allExercises = Exercise.GetExercises();
+      var allExercises = Workout.GetExercises();
       return View(allExercises);
     }
 
     [HttpPost]
     public IActionResult Index(Exercise exercise)
     {
-      Exercise.Post(exercise);
+      Workout.Post(exercise);
       return RedirectToAction("Index");
     }
 
     public IActionResult Details(int id)
     {
-      var exercise = Exercise.GetDetails(id);
+      var exercise = Workout.GetDetails(id);
       return View(exercise);
     }
 
     public IActionResult Edit(int id)
     {
-      var exercise = Exercise.GetDetails(id);
+      var exercise = Workout.GetDetails(id);
       return View(exercise);
     }
 
@@ -39,13 +39,13 @@ namespace FitnessClient.Controllers
     public IActionResult Details(int id, Exercise exercise)
     {
       exercise.ExerciseId = id;
-      Exercise.Put(exercise);
+      Workout.Put(exercise);
       return RedirectToAction("Details", id);
     }
 
     public IActionResult Delete(int id)
     {
-      Exercise.Delete(id);
+      Workout.Delete(id);
       return RedirectToAction("Index");
     }
   }
