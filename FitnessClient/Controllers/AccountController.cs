@@ -32,7 +32,16 @@ namespace FitnessClient.Controllers
     [HttpPost]
     public async Task<ActionResult> Register (RegisterViewModel model)
     {
-      var user = new ApplicationUser { UserName = model.Email };
+      var user = new ApplicationUser 
+      { 
+        UserName = model.Name,
+        Email = model.Email, 
+        Height = model.Height,
+        Weight = model.Weight,
+        Age = model.Age,
+        FitnessLevel = model.FitnessLevel,
+        Gender = model.Gender
+      };
       IdentityResult result = await _userManager.CreateAsync(user, model.Password);
       if (result.Succeeded)
       {

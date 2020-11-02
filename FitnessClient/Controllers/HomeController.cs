@@ -10,9 +10,10 @@ namespace FitnessClient.Controllers
 {
   public class HomeController : Controller
   {
+    [HttpGet("/")]
     public IActionResult Index()
         {
-            return RedirectToAction("Index", "Exercises");
+            return View();
         }
 
   }
