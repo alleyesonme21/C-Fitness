@@ -4,6 +4,7 @@ namespace FitnessClient.Models
 {
     public class ApplicationUser : IdentityUser
     {
+        public string Name { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
         public int Age { get; set; }
