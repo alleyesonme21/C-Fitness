@@ -12,7 +12,7 @@ namespace FitnessClient.Controllers
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
 
-    public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, FitnessClientContext db)
+    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, FitnessClientContext db)
     {
       _userManager = userManager;
       _signInManager = signInManager;
@@ -30,25 +30,27 @@ namespace FitnessClient.Controllers
     }
 
     [HttpPost]
-    public async Task<ActionResult> Register (RegisterViewModel model)
+    public async Task<ActionResult> Register(RegisterViewModel model)
     {
-      var user = new ApplicationUser 
-      { 
-        UserName = model.Name,
-        Email = model.Email, 
-        Height = model.Height,
-        Weight = model.Weight,
-        Age = model.Age,
-        FitnessLevel = model.FitnessLevel,
-        Gender = model.Gender
+      var user = new ApplicationUser
+      {
+        UserName = model.Email
+        // Email = model.Email,
+        // Height = model.Height,
+        // Weight = model.Weight,
+        // Age = model.Age,
+        // FitnessLevel = model.FitnessLevel,
+        // Gender = model.Gender
       };
       IdentityResult result = await _userManager.CreateAsync(user, model.Password);
       if (result.Succeeded)
       {
+        System.Console.WriteLine("SUCCESS");
         return RedirectToAction("Index");
       }
       else
       {
+        System.Console.WriteLine("NOPE");
         return View();
       }
     }

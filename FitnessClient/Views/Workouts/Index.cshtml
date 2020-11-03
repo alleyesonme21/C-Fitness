@@ -25,14 +25,14 @@
 @foreach (Exercise exercise in Model)
 {
     <ul>
-        <li>ID: @exercise.ExerciseId</li>
-        <li>Name: @exercise.Name</li>
+        @* <li>ID: @exercise.ExerciseId</li> *@
+        <li><strong> @exercise.Name</strong></li>
         <li>Difficulty: @exercise.Difficulty</li>
-        <li>Type: @exercise.Type</li>
-        <li>Target: @exercise.Target</li>
-        <li>Calories: @exercise.Calories</li>
+        @* <li>Type: @exercise.Type</li> *@
+        <li>Targets: @exercise.Target</li>
+        @* <li>Calories: @exercise.Calories</li> *@
     </ul>
-    <a href="/Exercises/Details/@(exercise.ExerciseId)"><p>View Details</p></a>
+    @* <a href="/Exercises/Details/@(exercise.ExerciseId)"><p>View Details</p></a> *@
     <br>
 }
 </ol>

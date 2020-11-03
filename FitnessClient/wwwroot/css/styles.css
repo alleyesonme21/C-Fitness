@@ -1,0 +1,32 @@
+#header {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  background:#333;
+  padding:12px;
+  padding-left: 40px;
+}
+h1 {
+  font-family: 'Luckiest Guy', cursive;
+  text-align: center;
+  font-size: 80px;
+  margin-top: 80px;
+}
+h2 {
+  margin-top: 80px;
+}
+body {
+  background-color: rgb(214, 255, 214);
+}
+.container {
+  background-color: white;
+  padding: 10px;
+  padding-bottom: 600px;
+  border: solid black;
+  border-width: 3px;
+}
+.myLink {
+  padding-top: 20px;
+  font-size: 20px;
+}

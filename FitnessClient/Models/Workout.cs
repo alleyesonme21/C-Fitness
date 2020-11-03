@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -19,7 +19,8 @@ namespace FitnessClient.Models
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
       List<Exercise> exerciseList = JsonConvert.DeserializeObject<List<Exercise>>(jsonResponse.ToString());
-      return exerciseList;
+      var sortedList = exerciseList.OrderBy(si => si.Difficulty).Take(10).ToList();
+      return sortedList;
     }
     // get one exercise
     public static Exercise GetDetails(int id)
