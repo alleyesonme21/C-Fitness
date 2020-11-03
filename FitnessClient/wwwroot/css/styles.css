@@ -13,11 +13,15 @@ h1 {
   font-size: 80px;
   margin-top: 80px;
 }
+.subHeader {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 26px;
+}
 h2 {
   margin-top: 80px;
 }
 body {
-  background-color: rgb(214, 255, 214);
+  background-color: rgb(214, 255, 231);
 }
 .container {
   background-color: white;
@@ -29,4 +33,40 @@ body {
 .myLink {
   padding-top: 20px;
   font-size: 20px;
+}
+#headerImg {
+  float: right;
+  position: absolute;
+  margin-top: 90px;
+  margin-left: 830px;
+}
+.avatar {
+  float: right;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 830px;
+  border: solid black;
+  border-width: 2px;
+  padding: 2px;
+}
+.btn {
+  font-size: 18px;
+}
+.btn-info {
+  background-color: rgb(243, 2, 2);
+  border: black;
+}
+.btn-info:hover {
+  background-color: rgb(170, 0, 0);
+  border: black;
+}
+.btn-success {
+  background-color: rgb(2, 206, 172);
+}
+.btn-success:hover {
+  background-color: rgb(2, 163, 136);
+}
+#homeImg {
+  background-color: black;
+  opacity: 80%;
 }

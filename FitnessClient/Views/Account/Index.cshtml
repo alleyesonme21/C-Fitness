@@ -4,14 +4,18 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-<h2>You are signed in as @User.Identity.Name</h2>
+  <h2 class="text-center">Your Dashboard</h2>
+<img class="avatar" src="https://i.pinimg.com/originals/31/b6/e5/31b6e5b55e936f810f3df2fe470bf859.png" width="120px">
+<h2 class="signIn">You are signed in as @User.Identity.Name</h2>
 <hr />
 
     <p>Welcome back!</p>
+    
+    <p class="myLink">@Html.ActionLink("Add Custom Exercise", "AddExercise", "Workouts", null, new { @class="btn title-button btn-info"})</p>
+
     @* <p>@Html.ActionLink("Generate Workout", </p> *@
         @using (Html.BeginForm("LogOff", "Account"))
     {
-        <img src="~/img/workout1.png" class="workout">
         <input type="submit" class="btn btn-default" value="Log out" />
     }
 }
@@ -19,15 +23,10 @@ else
 {
   <div class="row text-center">
     <div class="col-md-6">
-      <p class="myLink">@Html.ActionLink("Register", "Register")</p>
+      <p class="myLink">@Html.ActionLink("Register", "Register", null, null, new { @class="btn title-button btn-info"})</p>
     </div>
     <div class="col-md-6">
-      <p class="myLink">@Html.ActionLink("Log in", "Login")</p>
+      <p class="myLink">@Html.ActionLink("Log in", "Login", null, null, new { @class="btn title-button btn-success"})</p>
     </div>
   </div>
-    
-
 }
-
-<img src="~/img/workout1.png" class="workout">
-@* <p>@Html.ActionLink("Home", "Index", "Home")</p> *@

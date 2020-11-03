@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using FitnessClient.Models;
 using System.Threading.Tasks;
 using FitnessClient.ViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FitnessClient.Controllers
 {

@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@using FitnessClient.Models;
+
+<h3>New Exercise:</h3>
+<form action="/exercises" method="post">
+  <label for="name">Exercise Name</label>
+  <input id="name" name="name" type="text">
+  <br>
+  <label for="difficulty">Difficulty</label>
+  <input id="difficulty" name="difficulty" type="text">
+  <br>
+  <label for="type">Type</label>
+  <input id="type" name="type" type="text">
+  <br>
+  <label for="target">Target</label>
+  <input id="target" name="target" type="text">
+  <br>
+  <label for="calories">Calories</label>
+  <input id="calories" name="calories" type="number">
+  <br>
+  <button type="submit">Add Exercise!</button>
+</form>

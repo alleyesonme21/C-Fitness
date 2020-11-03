@@ -14,14 +14,43 @@ namespace FitnessClient.Models
 
     public static List<Exercise> GetExercises()
     {
-      var apiCallTask = ApiHelper.GetAll();
+      var apiCallTask = ApiHelper.GetAll(); //gives list of every possible exercise
       var result = apiCallTask.Result;
 
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Exercise> exerciseList = JsonConvert.DeserializeObject<List<Exercise>>(jsonResponse.ToString());
+      return exerciseList;
+    }
+    public static List<Exercise> GetExercisesEasy() //gives a list of 10 easy exercises
+    {
+      var apiCallTask = ApiHelper.GetAll();
+      var result = apiCallTask.Result;
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
       List<Exercise> exerciseList = JsonConvert.DeserializeObject<List<Exercise>>(jsonResponse.ToString());
       var sortedList = exerciseList.OrderBy(si => si.Difficulty).Take(10).ToList();
       return sortedList;
     }
+    public static List<Exercise> GetExercisesHard() //gives a list of 10 hard exercises
+    {
+      var apiCallTask = ApiHelper.GetAll();
+      var result = apiCallTask.Result;
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Exercise> exerciseList = JsonConvert.DeserializeObject<List<Exercise>>(jsonResponse.ToString());
+      var sortedList = exerciseList.OrderBy(si => si.Difficulty).Reverse().Take(12).ToList();
+      return sortedList;
+    }
+    public static List<Exercise> GetExercisesMedium() //gives a list of 12 medium exercises
+    {
+      var apiCallTask = ApiHelper.GetAll();
+      var result = apiCallTask.Result;
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Exercise> exerciseList = JsonConvert.DeserializeObject<List<Exercise>>(jsonResponse.ToString());
+      var sortedList = exerciseList.OrderBy(si => si.Difficulty).Skip(5).Take(12).ToList();
+      return sortedList;
+    }
+
+
+
     // get one exercise
     public static Exercise GetDetails(int id)
     {
