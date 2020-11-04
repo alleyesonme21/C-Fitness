@@ -3,8 +3,17 @@ using Microsoft.AspNetCore.Identity;
 using FitnessClient.Models;
 using System.Threading.Tasks;
 using FitnessClient.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Authorization;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+
+
+
+
 
 namespace FitnessClient.Controllers
 {
@@ -25,7 +34,19 @@ namespace FitnessClient.Controllers
     {
       return View();
     }
+  public IActionResult Details()
+    {
+      return View();
+    }
 
+  [HttpPost]
+  public ActionResult Details(string id, ApplicationUser applicationUser)
+  {
+    var thisUser = _db.Users.FirstOrDefault(Id => applicationUser.Id == id);
+    _db.Entry(thisUser).State = EntityState.Modified;
+    _db.SaveChanges();
+    return RedirectToAction("Index");
+  }
     public IActionResult Register()
     {
       return View();

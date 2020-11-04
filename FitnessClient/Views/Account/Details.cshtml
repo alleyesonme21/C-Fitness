@@ -1,0 +1,48 @@
+@{
+  Layout = "_Layout";
+}
+
+  <h2 class="text-center h2main">Your Dashboard</h2>
+<img class="avatar" src="https://i.pinimg.com/originals/31/b6/e5/31b6e5b55e936f810f3df2fe470bf859.png" width="120px">
+<h2 class="signIn">You are signed in as @User.Identity.Name</h2>
+<hr />
+<div class="row">
+      <div class="card-deck">
+        <div class="col-md-12">
+          <div class="card bg-default userCard">
+            <div class="card-body text-center detail-card">
+              <h3 class="card-text">User Preferences</h3>
+              <p class="card-text">
+                
+                      @model FitnessClient.Models.ApplicationUser
+
+                      @using (Html.BeginForm())
+                      {
+                          @Html.HiddenFor(model => model.Id)
+
+                          @Html.LabelFor(model => model.Name)
+                          @Html.EditorFor(model => model.Name)<br><br>
+
+                          @Html.LabelFor(model => model.Age)
+                          @Html.EditorFor(model => model.Age)<br><br>
+
+                          @Html.LabelFor(model => model.Gender)
+                          @Html.EditorFor(model => model.Gender)<br><br>
+
+                          @Html.LabelFor(model => model.FitnessLevel)
+                          @Html.EditorFor(model => model.FitnessLevel)<br><br>
+
+                          @Html.LabelFor(model => model.Height)
+                          @Html.EditorFor(model => model.Height)<br><br>
+
+                          @Html.LabelFor(model => model.Weight)
+                          @Html.EditorFor(model => model.Weight)<br><br>
+                          <input type="submit" value="Save" />
+                      }
+
+                </p>
+            </div>
+          </div>
+        </div>
+        </div>
+</div>

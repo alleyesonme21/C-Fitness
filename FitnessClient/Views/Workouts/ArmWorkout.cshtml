@@ -4,18 +4,28 @@
 
 @using FitnessClient.Models;
 
-<h2 class="text-center" id="workout-options">Your Daily Workout</h2>
-
-<ol>
-@foreach (Exercise exercise in Model)
-{
-    <ul>
-        <li><strong> @exercise.Name</strong></li>
-        @* <li>Difficulty: @exercise.Difficulty</li> *@
-        @* <li>Type: @exercise.Type</li> *@
-        <li>Targets: @exercise.Target</li>
-        <li>Calories: @exercise.Calories</li>
-    </ul>
-    <br>
-}
-</ol>
+<div class="row">
+      <div class="card-deck">
+        <div class="col-md-12">
+          <div class="card bg-primary workoutCard1">
+            <div class="card-body text-left">
+              <h2 class="card-text">Your Daily Workout - 3 sets of 10</h2>
+              <h3 class="card-text">
+              <img src="~/img/w2.svg" class="workout">
+                @foreach (Exercise exercise in Model)
+                {
+                  <h3><strong> @exercise.Name</strong> | Targets: @exercise.Target | Calories: @exercise.Calories </h3>  
+                }
+                @using (Html.BeginForm())
+                {
+                <input type="submit" class="btn btn-info fa" value="Complete Workout" />
+                @* <h3 button type="submit" class="btn btn-info fa">Did you complete the workout?</h3> *@
+                }
+                
+                <br>
+              </h3>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

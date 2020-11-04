@@ -9,6 +9,8 @@ namespace FitnessClient.Models
     public DbSet<Exercise> Exercises { get; set; }
     public DbSet<Workout> Workouts { get; set; }
 
+    // public DbSet<AspNetUsers> AspNetUsers { get; }
+
     public FitnessClientContext(DbContextOptions options) : base(options) { }
   }
 }

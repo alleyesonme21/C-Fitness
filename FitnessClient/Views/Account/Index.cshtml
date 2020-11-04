@@ -4,32 +4,60 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-  <h2 class="text-center">Your Dashboard</h2>
+  <h2 class="text-center h2main">Your Dashboard</h2>
 <img class="avatar" src="https://i.pinimg.com/originals/31/b6/e5/31b6e5b55e936f810f3df2fe470bf859.png" width="120px">
 <h2 class="signIn">You are signed in as @User.Identity.Name</h2>
 <hr />
-
-    <div class="row">
-      <div class="col-md-4">
-        <p class="myLink">@Html.ActionLink("Add Custom Exercise", "AddExercise", "Workouts", null, new { @class="btn title-button btn-info"})</p>
-      </div>
-      <div class="col-md-4">
-            @using (Html.BeginForm("LogOff", "Account"))
+<div class="row">
+      <div class="card-deck">
+        <div class="col-md-3">
+          <div class="card bg-primary userCard userCard1">
+            <div class="card-body text-center">
+              <h3 class="card-text">My Workouts- By Difficulty:</h3>
+              <p class="card-text">
+                @Html.ActionLink("Beginner", "EasyWorkout", "Workouts", null, new { @class="btn title-button btn-success"})<br><br>
+                @Html.ActionLink("Intermediate", "MediumWorkout", "Workouts", null, new { @class="btn title-button btn-success"})<br><br>
+                @Html.ActionLink("Super Fit", "HardWorkout", "Workouts", null, new { @class="btn title-button btn-success"})<br><br>
+                </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-warning userCard">
+            <div class="card-body text-center">
+              <h3 class="card-text">My Workouts- By Focus:</h3>
+              <p class="card-text">
+                @Html.ActionLink("Abs", "AbsWorkout", "Workouts", null, new { @class="btn title-button btn-success"})<br><br>
+                @Html.ActionLink("Arms", "ArmWorkout", "Workouts", null, new { @class="btn title-button btn-success"})<br><br>
+                @Html.ActionLink("Legs & Glutes", "LegWorkout", "Workouts", null, new { @class="btn title-button btn-success"})<br><br>
+                @Html.ActionLink("Cardio/HIIT", "CardioWorkout", "Workouts", null, new { @class="btn title-button btn-success"})</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-success userCard">
+            <div class="card-body text-center">
+              <br>
+              <h3 class="card-text">Account Manager</h3><br>
+              <p class="card-text">@Html.ActionLink("Edit My Details", "Details", null , null, new { @class="btn title-button btn-success"})<br></p>
+              <p class="card-text">@using (Html.BeginForm("LogOff", "Account"))
     {
         <input type="submit" class="btn btn-default" value="Log out" />
-    }
-      </div>
-      <div class="col-md-4">
-        @Html.ActionLink("Beginner", "EasyWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
-        @Html.ActionLink("Intermediate", "MediumWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
-        @Html.ActionLink("Super Fit", "HardWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
-        @Html.ActionLink("Abs", "AbsWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
-        @Html.ActionLink("Arms", "ArmWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
-        @Html.ActionLink("Legs & Glutes", "LegWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
-        @Html.ActionLink("Cardio/HIIT", "CardioWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
-      </div>
-    </div>
-    
+    }</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-danger userCard userCard4">
+            <div class="card-body text-center">
+              <h3 class="card-text">Customize Workouts</h3><br>
+              <p class="card-text myLink">@Html.ActionLink("Add Custom Exercise", "AddExercise", "Workouts", null, new { @class="btn title-button btn-success"})</p>
+              <p class="card-text myLink">@Html.ActionLink("Search By Exercise", "Index", "Workouts", null, new { @class="btn title-button btn-success"})</p>
+            </div> 
+          </div>
+          </div>
+        </div>
+</div>
 }
 else
 {

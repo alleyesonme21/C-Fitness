@@ -26,7 +26,7 @@ body {
 .container {
   background-color: white;
   padding: 10px;
-  padding-bottom: 600px;
+  padding-bottom: 200px;
   border: solid black;
   border-width: 3px;
 }
@@ -53,23 +53,104 @@ body {
   font-size: 18px;
 }
 .btn-info {
-  background-color: rgb(2, 147, 243);
+  background-color: rgb(136, 98, 238);
   border: black;
 }
 .btn-info:hover {
-  background-color: rgb(0, 54, 170);
+  background-color: rgb(105, 4, 151);
   border: black;
 }
 .btn-success {
-  background-color: rgb(2, 206, 172);
+  background-color: rgb(48, 214, 186);
 }
 .btn-success:hover {
   background-color: rgb(2, 163, 136);
 }
 #homeImg {
-  background-color: black;
-  opacity: 80%;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  border: solid black;
+  opacity: 100%;
 }
 #infoPara {
   font-size: 25px;
+  margin-top: 60px;
+}
+.userCard {
+  height: 350px;
+  border: solid black;
+  border-radius: 10px;
+}
+.userCard1, .userCard4 {
+  background-color: rgb(65, 65, 65);
+  color: white;
+}
+.bg-info {
+  background-color: rgb(157, 71, 255);
+}
+.workoutCard {
+  height: 700px;
+  border: solid black;
+  border-radius: 10px;
+  background-color: rgb(70, 70, 70);
+}
+.h2main {
+  margin-top: 0px;
+}
+/* .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  height: 60px;
+  line-height: 60px;
+} */
+
+.workout {
+  
+  width: 50%;
+  float: right;
+
+}
+.workoutCard1 {
+  height: 800px;
+  border: solid black;
+  border-radius: 10px;
+  background-color: rgb(70, 70, 70);
+  /* margin: 15px; */
+  padding: 25px;
+}
+div#footer {
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  color:rgb(230, 222, 222);
+  background:  rgb(29, 28, 28);
+  padding:10px;
+  height: 50px;
+}
+
+ul#footerList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 12%;
+  overflow: hidden;
+  background-color: rgb(29, 28, 28);
+}
+
+li#footerUl {
+  float: right;
+}
+
+li#footerUl a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+#apiList li {
+  list-style: none;
 }

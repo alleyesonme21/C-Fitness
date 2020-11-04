@@ -5,11 +5,16 @@
 @using FitnessClient.Models;
 
 <h2 class="text-center">Our Exercises</h2>
-
+@using (Html.BeginForm())
+{
+  @Html.Label("Filter Exercises by Name")
+  @Html.TextBox("Name")
+  <input type="submit" value="Search" class="btn btn-info btn-sm"/>
+}<br>
 <ol>
 @foreach (Exercise exercise in Model)
 {
-    <ul>
+    <ul id="apiList">
         <li><strong> @exercise.Name</strong></li>
         <li>Difficulty: @exercise.Difficulty</li>
         @* <li>Type: @exercise.Type</li> *@
