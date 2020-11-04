@@ -4,14 +4,14 @@
 
 @using FitnessClient.Models;
 
-<h2 class="text-center">Our Exercises</h2>
+<h2 class="text-center">Your Daily Workout</h2>
 
 <ol>
 @foreach (Exercise exercise in Model)
 {
     <ul>
         <li><strong> @exercise.Name</strong></li>
-        <li>Difficulty: @exercise.Difficulty</li>
+        @* <li>Difficulty: @exercise.Difficulty</li> *@
         @* <li>Type: @exercise.Type</li> *@
         <li>Targets: @exercise.Target</li>
         <li>Calories: @exercise.Calories</li>

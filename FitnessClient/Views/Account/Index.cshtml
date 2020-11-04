@@ -9,15 +9,27 @@
 <h2 class="signIn">You are signed in as @User.Identity.Name</h2>
 <hr />
 
-    <p>Welcome back!</p>
-    
-    <p class="myLink">@Html.ActionLink("Add Custom Exercise", "AddExercise", "Workouts", null, new { @class="btn title-button btn-info"})</p>
-
-    @* <p>@Html.ActionLink("Generate Workout", </p> *@
-        @using (Html.BeginForm("LogOff", "Account"))
+    <div class="row">
+      <div class="col-md-4">
+        <p class="myLink">@Html.ActionLink("Add Custom Exercise", "AddExercise", "Workouts", null, new { @class="btn title-button btn-info"})</p>
+      </div>
+      <div class="col-md-4">
+            @using (Html.BeginForm("LogOff", "Account"))
     {
         <input type="submit" class="btn btn-default" value="Log out" />
     }
+      </div>
+      <div class="col-md-4">
+        @Html.ActionLink("Beginner", "EasyWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
+        @Html.ActionLink("Intermediate", "MediumWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
+        @Html.ActionLink("Super Fit", "HardWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
+        @Html.ActionLink("Abs", "AbsWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
+        @Html.ActionLink("Arms", "ArmWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
+        @Html.ActionLink("Legs & Glutes", "LegWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
+        @Html.ActionLink("Cardio/HIIT", "CardioWorkout", "Workouts", null, new { @class="btn title-button btn-success"})
+      </div>
+    </div>
+    
 }
 else
 {
@@ -30,3 +42,4 @@ else
     </div>
   </div>
 }
+

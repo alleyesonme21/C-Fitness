@@ -1,6 +1,6 @@
 <br>
 <p align="center">
-  <u><big>|| <b>Animal Shelter API</b> ||</big></u>
+  <u><big>|| <b>Fitness API</b> ||</big></u>
 </p>
 <p align="center">
     <p align="center">
@@ -18,14 +18,14 @@
 </p>
 
 <p align="center">
-  <medium>Created on 11/3/2020, Updated on 10/30/2020.</medium>
+  <medium>Created on 11/3/2020, Updated on 11/3/2020.</medium>
 </p>
 
 
 ## 🌐 About the Project
 
 ### 📖 Description
-A web API for an animal shelter. It utilizies the RESTful principles, pagination, and Swagger. The user is able to see the in-use version of the API when using Postman. Currently v1.0.
+A web API for a Fitness . It utilizies the RESTful principles, pagination, and Swagger. The user is able to see the in-use version of the API when using Postman. Currently v1.0.
 
 ### 🦠 Known Bugs
 
@@ -46,18 +46,18 @@ A web API for an animal shelter. It utilizies the RESTful principles, pagination
 
   #### Cloning
 
-  1) Navigate to the [Animal Shelter repository here](https://github.com/janetkarpenske/C-Fitness).
+  1) Navigate to the [C-FItness repository here](https://github.com/janetkarpenske/C-Fitness).
   2) Click 'Clone or download' to reveal the HTTPS url ending with .git and the 'Download ZIP' option.
   3) Open up your system Terminal or GitBash, navigate to your desktop with the command: `cd Desktop`, or whichever location suits you best.
   4) Clone the repository to your desktop: `$ git clone https://github.com/janetkarpenske/C-Fitness`
-  5) Run the command `cd AnimalShelter.Solution` to enter into the project directory.
+  5) Run the command `cd C-Fitness` to enter into the project directory.
   6) View or Edit:
       * Code Editor - Run the command `atom .` or `code .` to open the project in Atom or VisualStudio Code respectively for review and editing.
       * Text Editor - Open by double clicking on any of the files to open in a text editor.
 
   #### AppSettings
 
-  1) Create a new file in the AnimalShelter.Solution/AnimalShelter directory named `appsettings.json`
+  1) Create a new file in the C-Fitness/Fitness directory named `appsettings.json`
   2) Add in the following code snippet to the new appsettings.json file:
   
   ```
@@ -69,41 +69,41 @@ A web API for an animal shelter. It utilizies the RESTful principles, pagination
     },
     "AllowedHosts": "*",
     "ConnectionStrings": {
-        "DefaultConnection": "Server=localhost;Port=3306;database=animal_shelter;uid=root;pwd=YourPassword;"
+        "DefaultConnection": "Server=localhost;Port=3306;database=project_name;uid=root;pwd=YourPassword;"
     }
 }
   ```
   3) Change the server, port, and user id as necessary. Replace 'YourPassword' with relevant MySQL password (set at installation of MySQL).
 
   #### Database
-  1) Navigate to AnimalShelter.Solution/AnimalShelter directory using the MacOS Terminal or Windows Powershell.
+  1) Navigate to C-Fitness/Fitness directory using the MacOS Terminal or Windows Powershell.
   2) Run the command `dotnet ef database update` to generate the database through Entity Framework Core.
   3) (Optional) To update the database with any changes to the code, run the command `dotnet ef migrations add <MigrationsName>` which will use Entity Framework Core's code-first principle to generate a database update. After, run the previous command `dotnet ef database update` to update the database.
 
   #### Launch the API
-  1) Navigate to AnimalShelter.Solution/AnimalShelter directory using the MacOS Terminal or Windows Powershell.
+  1) Navigate to C-FItness/Fitness directory using the MacOS Terminal or Windows Powershell.
   2) Run the command `dotnet run` to have access to the API in Postman or browser.
 ------------------------------
 ## 🛰️ API Documentation
 Explore the API endpoints in Postman or a browser. You will not be able to utilize authentication in a browser.
 
-<!-- ### Using Swagger Documentation 
-For full documentation and to explore the Animal Shelter API endpoints with NSwag, launch the project using `dotnet run` with the Terminal or Powershell, and input the following URL into your browser: `http://localhost:5000/swagger/index.html` -->
+### Using Swagger Documentation 
+For full documentation and to explore the Fitness API endpoints with NSwag, launch the project using `dotnet run` with the Terminal or Powershell, and input the following URL into your browser: `http://localhost:5000/swagger/index.html`
 
 ### Note on Pagination
-The Animal Shelter API returns a default of 5 results per page at a time.
+The Fitness API returns a default of 5 results per page at a time.
 ..........................................................................................
 ### Endpoints
 Base URL: `https://localhost:5000`
-### Animals
-Access information about animals in the animal shelter.
+### Workouts
+Access information about workouts in the Fitness.
 #### HTTP Request
 ```
-GET /api/animals
-POST /api/animals
-GET /api/animals/{id}
-PUT /api/animals/{id}
-DELETE /api/animals/{id}
+GET /api/workouts
+POST /api/workouts
+GET /api/workouts/{id}
+PUT /api/workouts/{id}
+DELETE /api/workouts/{id}
 ```
 #### Path Parameters
 | Parameter | Type | Default | Required | Description |
@@ -113,22 +113,22 @@ DELETE /api/animals/{id}
 
 #### Example Query
 ```
-https://localhost:5000/api/animals/?name=Benji&species=dog
+https://localhost:5000/api/workouts/?name=pushups&difficulty=medium
 ```
 #### Sample JSON Response
 ```
 {
     "Id": 1,
-    "Name": "Benji",
-    "Species": "Dog",
-    "Breed": "Golden Retriever",
-    "Age": 5,
-    "Gender": "Male"
+    "Name": "Pushups",
+    "Difficulty": "Medium",
+    "Type": "Strength",
+    "Target": "Arms,
+    "Calories": 20
 }
 ```
 ### ✉️ Contact and Support
 
-If you have any feedback or concerns, please contact Janet Karpenske via Github.
+If you have any feedback or concerns, please contact Janet Karpenske, Chloe Hellberg and Johnny Duverseau via Github.
 ------------------------------
 ### ⚖️ License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Copyright (c) 2020 Janet Karpenske. All Rights Reserved.

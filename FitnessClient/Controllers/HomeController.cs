@@ -16,6 +16,9 @@ namespace FitnessClient.Controllers
         {
             return View();
         }
-
+    public IActionResult Details()
+        {
+            return View();
+        }
   }
 }
