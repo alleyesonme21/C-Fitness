@@ -6,22 +6,25 @@
 
 @model RegisterViewModel
 
-<h2 class="text-center">Create an Account</h2>
+<h2 class="text-center">Create a new account</h2>
 <hr />
+
 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
 {
   <table>
     <tr>
       <td>@Html.LabelFor(user => user.Email)</td>
       <td>@Html.TextBoxFor(user=> user.Email)</td>
-
+    </tr><br>
+    <tr>
       <td>@Html.LabelFor(user=> user.Password)</td>
       <td>@Html.PasswordFor(user=> user.Password)</td>
-
+    </tr><br>
+    <tr>
       <td>@Html.LabelFor(user=> user.ConfirmPassword)</td>
       <td>@Html.PasswordFor(user=> user.ConfirmPassword)</td>
-    </tr>
+    </tr><br>
   </table>
   <br>
-    <input type="submit" value="Register" />
+    <input type="submit" value="Register" class="btn btn-info"/>
 }

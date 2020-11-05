@@ -39,7 +39,8 @@
             <div class="card-body text-center">
               <br>
               <h3 class="card-text">Account Manager</h3><br>
-              <p class="card-text">@Html.ActionLink("Edit My Details", "Details", null , null, new { @class="btn title-button btn-success"})<br></p>
+              <p class="card-text">@Html.ActionLink("Edit My Details", "Details", null , null, new { @class="btn title-button btn-success"})<br><br>
+              @Html.ActionLink("Completed Workouts", "CompletedWorkouts", "Workouts", null, new { @class="btn title-button btn-success"})</p>
               <p class="card-text">@using (Html.BeginForm("LogOff", "Account"))
     {
         <input type="submit" class="btn btn-default" value="Log out" />

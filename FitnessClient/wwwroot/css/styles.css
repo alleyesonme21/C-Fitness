@@ -170,3 +170,6 @@ li#footerUl a {
   border: solid black;
   opacity: 100%;
 }
+#completeImg {
+  margin-left: 20%;
+}

@@ -20,5 +20,9 @@ namespace FitnessClient.Controllers
         {
             return View();
         }
-  }
+        public IActionResult Completed()
+        {
+            return View();
+        }
+    }
 }

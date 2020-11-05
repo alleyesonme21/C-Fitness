@@ -81,7 +81,10 @@ namespace FitnessClient.Controllers
   //     _db.Exercises.Add(exercise);
   //     _db.SaveChanges();
   //   }
-
+    public IActionResult CompletedWorkouts()
+    {
+      return View();
+    }
     public IActionResult Delete(int id)
     {
       Workout.Delete(id);
@@ -92,39 +95,45 @@ namespace FitnessClient.Controllers
     public IActionResult EasyWorkout(int id)
     {
       // bool exerciseComplete = true;
-      return RedirectToAction("Index", "Account");
+      return RedirectToAction("Completed", "Home");
     }
 
     [HttpPost]
     public IActionResult MediumWorkout(int id)
     {
-      return RedirectToAction("Index", "Account");
+      return RedirectToAction("Completed", "Home");
     }
-        [HttpPost]
+    
+    [HttpPost]
     public IActionResult HardWorkout(int id)
     {
-      return RedirectToAction("Index", "Account");
+      return RedirectToAction("Completed", "Home");
     }
-        [HttpPost]
+    
+    [HttpPost]
     public IActionResult ArmWorkout(int id)
     {
-      return RedirectToAction("Index", "Account");
+      return RedirectToAction("Completed", "Home");
     }
-        [HttpPost]
+    
+    [HttpPost]
     public IActionResult AbsWorkout(int id)
     {
-      return RedirectToAction("Index", "Account");
+      return RedirectToAction("Completed", "Home");
     }
-        [HttpPost]
-    public IActionResult LegsWorkout(int id)
+    
+    [HttpPost]
+    public IActionResult LegWorkout(int id)
     {
-      return RedirectToAction("Index", "Account");
+      return RedirectToAction("Completed", "Home");
     }
-        [HttpPost]
+    
+    [HttpPost]
     public IActionResult CardioWorkout(int id)
     {
-      return RedirectToAction("Index", "Account");
+      return RedirectToAction("Completed", "Home");
     }
+    
     [HttpPost]
     public ActionResult Index(string Name)
     {
