@@ -10,15 +10,18 @@
 <hr />
 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
 {
+  <table>
+    <tr>
+      <td>@Html.LabelFor(user => user.Email)</td>
+      <td>@Html.TextBoxFor(user=> user.Email)</td>
 
-    @Html.LabelFor(user => user.Email)
-    @Html.TextBoxFor(user=> user.Email)
+      <td>@Html.LabelFor(user=> user.Password)</td>
+      <td>@Html.PasswordFor(user=> user.Password)</td>
 
-    @Html.LabelFor(user=> user.Password)
-    @Html.PasswordFor(user=> user.Password)
-
-    @Html.LabelFor(user=> user.ConfirmPassword)
-    @Html.PasswordFor(user=> user.ConfirmPassword)
-
+      <td>@Html.LabelFor(user=> user.ConfirmPassword)</td>
+      <td>@Html.PasswordFor(user=> user.ConfirmPassword)</td>
+    </tr>
+  </table>
+  <br>
     <input type="submit" value="Register" />
 }

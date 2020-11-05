@@ -4,8 +4,8 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-  <h2 class="text-center h2main">Your Dashboard</h2>
-<img class="avatar" src="https://i.pinimg.com/originals/31/b6/e5/31b6e5b55e936f810f3df2fe470bf859.png" width="120px">
+  <h2 class="text-center h2main subHeader">Your Dashboard</h2>
+<img class="avatar" src="~/img/w7.svg" width="160px">
 <h2 class="signIn">You are signed in as @User.Identity.Name</h2>
 <hr />
 <div class="row">
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card bg-warning userCard">
+          <div class="card bg-warning userCard userCard2">
             <div class="card-body text-center">
               <h3 class="card-text">My Workouts- By Focus:</h3>
               <p class="card-text">
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card bg-success userCard">
+          <div class="card bg-success userCard userCard3">
             <div class="card-body text-center">
               <br>
               <h3 class="card-text">Account Manager</h3><br>

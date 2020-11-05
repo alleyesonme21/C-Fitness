@@ -11,7 +11,9 @@
   @Html.TextBox("Name")
   <input type="submit" value="Search" class="btn btn-info btn-sm"/>
 }<br>
-<ol>
+<div class="row">
+  <div class="col-md-6">
+    <ol>
 @foreach (Exercise exercise in Model)
 {
     <ul id="apiList">
@@ -24,3 +26,8 @@
     <br>
 }
 </ol>
+  </div>
+  <div class="col-md-6">
+    <img id="apiImg" src="~/img/w6.svg" width="90%">
+  </div>
+</div>

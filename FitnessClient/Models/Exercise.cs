@@ -17,6 +17,10 @@ namespace FitnessClient.Models
     public virtual ApplicationUser User { get; set; } //allows user to create custom exercise when logged in.
 
       // get all Exercises
-    
+    public static void Post(Exercise exercise)
+      {
+        string jsonExercise = JsonConvert.SerializeObject(exercise);
+        var apiCallTask = ApiHelper.Post(jsonExercise);
+      }
   }
 }
